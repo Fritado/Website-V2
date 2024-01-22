@@ -1,18 +1,18 @@
 import React from "react";
-import NavBar from "../components/commonComp/NavBar";
-import FooterOne from "../components/commonComp/FooterOne";
+import Footer from "../components/commonComp/Footer";
 import Breadcrumb from "../components/commonComp/Breadcrumb";
+import Header from "../components/commonComp/Header";
 
 const Demo = () => {
   return (
     <>
-      <NavBar />
+      <Header />
 
       <Breadcrumb title={"Demo"} />
 
       <div className="pd-top-120 pd-bottom-120"></div>
 
-      <FooterOne />
+      <Footer />
     </>
   );
 };

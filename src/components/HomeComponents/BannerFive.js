@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Img1 from '../HomeAssets/Img1.png'
+import Img1 from '../Assets/HomeAssets/Img1.png'
 
 const BannerFive = () => {
 

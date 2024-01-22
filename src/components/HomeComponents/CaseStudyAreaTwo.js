@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Img5 from "../HomeAssets/Img5.png"
-import Img6 from "../HomeAssets/Img6.png"
-import Img7 from "../HomeAssets/Img7.png"
-import Img8 from "../HomeAssets/Img8.png"
+import Img5 from "../Assets/HomeAssets/Img5.png"
+import Img6 from "../Assets/HomeAssets/Img6.png"
+import Img7 from "../Assets/HomeAssets/Img7.png"
+import Img8 from "../Assets/HomeAssets/Img8.png"
 
 const CaseStudyAreaTwo = () => {
   return (

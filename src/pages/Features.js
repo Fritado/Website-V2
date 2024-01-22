@@ -1,15 +1,15 @@
 import React from "react";
 import Breadcrumb from "../components/commonComp/Breadcrumb";
-import FooterOne from "../components/commonComp/FooterOne";
-import NavBar from "../components/commonComp/NavBar";
+import Footer from "../components/commonComp/Footer";
 import PricingAreaOne from "../components/FeaturesComp/PricingAreaOne";
 import ServiceAreaGroup from "../components/FeaturesComp/ServiceAreaGroup";
+import Header from "../components/commonComp/Header";
 
 const Features= () => {
   return (
     <>
       {/* Navigation Bar */}
-      <NavBar />
+      <Header />
 
       {/* Navigation Bar */}
       <Breadcrumb title={"Features"} />
@@ -21,7 +21,7 @@ const Features= () => {
       <PricingAreaOne />
 
       {/* Footer One */}
-      <FooterOne />
+      <Footer />
     </>
   );
 };

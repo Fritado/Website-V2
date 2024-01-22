@@ -2,7 +2,9 @@ const express = require("express");
 const app = express();
 const database = require("./config/database")
 const dotenv = require("dotenv");
-const userRoutes = require("./routes/user")
+const userRoutes = require("./routes/user");
+const postRoutes = require("./routes/post");
+
 const cors = require("cors");
 
 dotenv.config();
@@ -22,6 +24,8 @@ app.use(
 
 //routes
 app.use("/api/fritado/auth" , userRoutes);
+app.use("/api/fritado/post" , postRoutes);
+//app.use("/api/fritado/post" ,)
 
 //default routes
 app.get("/" , (req,res) =>{

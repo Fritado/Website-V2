@@ -1,13 +1,13 @@
 import React from "react";
 import Breadcrumb from "../components/commonComp/Breadcrumb";
-import FooterOne from "../components/commonComp/FooterOne";
-import NavBar from "../components/commonComp/NavBar";
+import Footer from "../components/commonComp/Footer";
+import Header from "../components/commonComp/Header"
 
 const Benefits = () => {
   return (
     <>
       {/* Navigation Bar */}
-      <NavBar />
+      <Header />
 
       {/* Navigation Bar */}
       <Breadcrumb title={"Benefits"} />
@@ -16,7 +16,7 @@ const Benefits = () => {
       <div className="pd-top-120 pd-bottom-120"></div>
 
       {/* Footer One */}
-      <FooterOne />
+      <Footer />
     </>
   );
 };

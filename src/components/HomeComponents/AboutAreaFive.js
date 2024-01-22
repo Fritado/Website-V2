@@ -1,8 +1,8 @@
 import React from "react";
 import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Img2 from "../HomeAssets/Img2.png";
-import Img3 from "../HomeAssets/Img3.png";
+import Img2 from "../Assets/HomeAssets/Img2.png";
+import Img3 from "../Assets/HomeAssets/Img3.png";
 
 const AboutAreaFive = () => {
   return (

@@ -1,9 +1,9 @@
 import React from "react";
 import { FaCalendarAlt, FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Img13 from "../HomeAssets/Img13.png"
-import Img14 from "../HomeAssets/Img14.png"
-import Img15 from "../HomeAssets/Img15.png"
+import Img13 from "../Assets/HomeAssets/Img13.png"
+import Img14 from "../Assets/HomeAssets/Img14.png"
+import Img15 from "../Assets/HomeAssets/Img15.png"
 
 
 const BlogAreaFive = () => {

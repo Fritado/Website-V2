@@ -1,8 +1,8 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema(
   {
-   firstName: {
+    firstName: {
       type: String,
       required: true,
       trim: true,
@@ -25,11 +25,17 @@ const userSchema = new mongoose.Schema(
     token: {
       type: String,
     },
+    posts: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "Post",
+      },
+    ],
     resetPasswordExpires: {
       type: Date,
     },
   },
   { timestamps: true }
-)
+);
 
-module.exports = mongoose.model("user", userSchema)
+module.exports = mongoose.model("User", userSchema);

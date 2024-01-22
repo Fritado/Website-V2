@@ -4,16 +4,17 @@ import Breadcrumb from "../components/commonComp/Breadcrumb";
 import ContactAreaOne from "../components/AboutComp/ContactAreaOne";
 import CounterAreaOne from "../components/AboutComp/CounterAreaOne";
 import FaqAreaOne from "../components/AboutComp/FaqAreaOne";
-import FooterOne from "../components/commonComp/FooterOne";
-import NavBar from "../components/commonComp/NavBar";
+import Footer from "../components/commonComp/Footer"
 import TeamAreaOne from "../components/AboutComp/TeamAreaOne";
 import WorkProcessOne from "../components/AboutComp/WorkProcessOne";
+import Header from "../components/commonComp/Header";
+
 
 const About = () => {
   return (
     <>
       {/* Navigation Bar */}
-      <NavBar />
+      <Header />
 
       {/* Navigation Bar */}
       <Breadcrumb title={"About Us"} />
@@ -37,7 +38,7 @@ const About = () => {
       <WorkProcessOne />
 
       {/* Footer One */}
-      <FooterOne />
+      <Footer />
     </>
   );
 };

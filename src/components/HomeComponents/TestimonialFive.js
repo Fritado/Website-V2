@@ -1,6 +1,6 @@
 import React from "react";
-import Img11 from "../HomeAssets/Img11.png"
-import Img12 from "../HomeAssets/Img12.png"
+import Img11 from "../Assets/HomeAssets/Img11.png"
+import Img12 from "../Assets/HomeAssets/Img12.png"
 
 const TestimonialFive = () => {
   return (

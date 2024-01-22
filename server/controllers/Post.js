@@ -3,43 +3,68 @@ const User = require("../models/User");
 require("dotenv").config();
 
 //CREATE POST
-export const createPost = async (req, res) => {
+exports.createPost = async (req, res) => {
   try {
-    const post = await new Post(req.body);
-    const newPost = post.save();
+    //const userId = req.user.id;
+    // const {title, description, image ,category} = req.body;
 
-    return res.status(200).json({
+    // if (title || description || image || category) {
+    //   return res.status(400).json({
+    //     success: false,
+    //     message: "All Fields are Mandatory",
+    //   });
+    // }
+    //  const exisitingUser = await User.findById(userId);
+    //   if (!exisitingUser) {
+    //     return res.status(404).send({
+    //       success: false,
+    //       message: "unable to find user",
+    //     });
+    //   }
+    // upload image code
+
+    //create post with the given details
+    const post = new Post(req.body);
+    const newPost = await post.save();
+    // const newPost = new Post({ title, description, image,category});
+
+    return res.status(201).json({
       success: true,
       message: "Post created successfully",
       newPost,
     });
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
     return res.status(500).json({
       success: false,
-      message: "Something went wrong",
+      message: "Failed to create post",
     });
   }
 };
 
 //UPDATE POST
-export const updatePost = async (req, res) => {
+exports.updatePost = async (req, res) => {
   try {
-    const post = await Post.findById(req.params.id);
+    const postId = await Post.findById(req.params.id);
+    const { title, description, image } = req.body;
 
-    if (!post) {
+    if (!postId) {
       return res.status(404).json({
         success: false,
         message: "Post not found",
       });
     }
-    const updatedPost = await Post.findByIdAndUpdate(req.params.id, {
-      $set: req.body,
-    });
+    const updatedPost = await Post.findByIdAndUpdate(
+      postId,
+      {
+        ...req.body,
+      },
+      { new: true }
+    );
 
     return res.status(200).json({
       success: true,
-      message: "Post updated successfully",
+      message: " Blog Post updated successfully",
       updatedPost,
     });
   } catch (error) {
@@ -52,11 +77,20 @@ export const updatePost = async (req, res) => {
 };
 
 //DELETE POST
-export const deletePost = async (req, res) => {
+exports.deletePost = async (req, res) => {
   try {
+    //const postId = req.body;
+    // const post = await Post.findById(postId)
     const post = await Post.findById(req.params.id);
     // await Comment.deleteMany({postId:req.params.id})
-    await post.delete();
+
+    if (!post) {
+      return res.status(404).json({
+        success: false,
+        message: "Post not found",
+      });
+    }
+    await Post.findByIdAndDelete(post);
 
     return res.status(200).json({
       success: true,
@@ -72,7 +106,7 @@ export const deletePost = async (req, res) => {
 };
 
 //GET ALL POST
-export const getAllPost = async (req, res) => {
+exports.getAllPost = async (req, res) => {
   try {
     const category = req.query.category;
     let allPost;
@@ -99,26 +133,55 @@ export const getAllPost = async (req, res) => {
 };
 
 //GET POST
-export const getPost = async (req, res) => {
+exports.getPost = async (req, res) => {
   try {
-    // const  postDeatils = await Post.findById(request.params.id);
-    const query=req.query;
-    const searchFilter={
-        title:{$regex:query.search, $options:"i"}
+    //const { id } = req.params.id;
+    const postDeatils = await Post.findById(req.params.id);
+
+    if (!postDeatils) {
+      return res.status(500).json({
+        success: false,
+        message: "Post not found  by this id",
+      });
     }
-    const postDeatils =await Post.find(query.search?searchFilter:null)
 
     return res.status(200).json({
-        success: true,
-        message: "Single post has been fetched successfully",
-        postDeatils
-      });
-
+      success: true,
+      message: "Single post has been fetched successfully",
+      postDeatils,
+    });
   } catch (error) {
     console.log(error);
-    return res.status(500).json({
+    return res.status(400).json({
       success: false,
-      message: "Error while getching post details",
+      message: "Error while getting post details",
+    });
+  }
+};
+
+//GET USER POST
+exports.userPost = async (req, res) => {
+  try {
+    const UserId = req.params.id;
+    const userPost = await Post.find(UserId)
+
+    if (!userPost) {
+      return res.status(404).send({
+        success: false,
+        message: "blogs not found with this id",
+      });
+    }
+    return res.status(200).send({
+      success: true,
+      message: "user blogs",
+      userPost,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(400).json({
+      success: false,
+      message: "error in user blog",
+      error,
     });
   }
 };

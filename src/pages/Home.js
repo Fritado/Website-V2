@@ -4,8 +4,8 @@ import AboutAreaSix from "../components/HomeComponents/AboutAreaSix";
 import BannerFive from "../components/HomeComponents/BannerFive";
 import BlogAreaFive from "../components/HomeComponents/BlogAreaFive";
 import CaseStudyAreaTwo from "../components/HomeComponents/CaseStudyAreaTwo";
-import FooterFour from "../components/HomeComponents/FooterFour";
-import NavbarFour from "../components/HomeComponents/NavbarFour";
+import Footer from "../components/commonComp/Footer";
+import Navbar from "../components/HomeComponents/Navbar";
 import ServiceAreaFive from "../components/HomeComponents/ServiceAreaFive";
 import TeamAreaThree from "../components/HomeComponents/TeamAreaThree";
 import TestimonialFive from "../components/HomeComponents/TestimonialFive";
@@ -15,7 +15,7 @@ const HomeFive = () => {
   return (
     <>
       {/* Navigation Bar */}
-      <NavbarFour />
+      <Navbar />
 
       {/* Banner Five */}
       <BannerFive />
@@ -45,7 +45,7 @@ const HomeFive = () => {
       <BlogAreaFive />
 
       {/* Footer Four */}
-      <FooterFour />
+      <Footer />
     </>
   );
 };

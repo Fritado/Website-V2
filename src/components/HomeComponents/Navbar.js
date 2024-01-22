@@ -15,7 +15,7 @@ const NavbarFour = () => {
   };
 
   const changeBackground = () => {
-    if (window.scrollY >= 720) {
+    if (window.scrollY >= 92) {
       setNavbar(true);
     } else {
       setNavbar(false);
@@ -66,7 +66,7 @@ const NavbarFour = () => {
         id="body-overlay"
       ></div>
       {/* ==================== Navbar Two Start ====================*/}
-      <nav className={navbar ? "navbar navbar-area navbar-expand-lg bg-white" : "navbar navbar-area navbar-area-3 navbar-expand-lg"}>
+      <nav className={navbar ? " li-color navbar navbar-area navbar-expand-lg " : "li-color-before navbar navbar-area navbar-area-3 navbar-expand-lg"}>
         <div className={navbar? "container nav-container bg-white " :" container nav-container"}>
           <div className="responsive-mobile-menu">
             <button

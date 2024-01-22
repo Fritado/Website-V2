@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ModalVideo from "react-modal-video";
-import Img9 from "../HomeAssets/Img9.png"
-import Img10 from "../HomeAssets/Img10.png"
+import Img9 from "../Assets/HomeAssets/Img9.png"
+import Img10 from "../Assets/HomeAssets/Img10.png"
 
 const AboutAreaSix = () => {
   const [isOpen, setOpen] = useState(false);

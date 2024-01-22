@@ -1,14 +1,14 @@
 import React from "react";
 import Breadcrumb from "../components/commonComp/Breadcrumb";
-import FooterOne from "../components/commonComp/FooterOne";
-import NavBar from "../components/commonComp/NavBar";
+import Footer from "../components/commonComp/Footer";
 import TeamDetailsGroup from "../components/TeamComp/TeamDetailsGroup";
+import Header from "../components/commonComp/Header";
 
 const TeamDetails = () => {
   return (
     <>
       {/* Navigation Bar */}
-      <NavBar />
+      <Header/>
 
       {/* Breadcrumb */}
       <Breadcrumb title={"Team Details"} />
@@ -17,7 +17,7 @@ const TeamDetails = () => {
       <TeamDetailsGroup />
 
       {/* Footer One */}
-      <FooterOne />
+      <Footer />
     </>
   );
 };

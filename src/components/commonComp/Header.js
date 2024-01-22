@@ -1,12 +1,11 @@
-import React, {useEffect, useState } from "react";
-import { FaArrowRight , FaSearch } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { FaArrowRight, FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const Header = () => {
   const [active, setActive] = useState(false);
-  const [searchShow, setSearchShow] = useState(false);
   const [navbar, setNavbar] = useState(false);
-
+  const [searchShow, setSearchShow] = useState(false);
   const menuActive = () => {
     setActive(!active);
   };
@@ -40,7 +39,6 @@ const NavBar = () => {
       };
     }
   }
-
   return (
     <>
       {/* search popup start*/}
@@ -67,10 +65,15 @@ const NavBar = () => {
         className={searchShow ? "body-overlay active" : "body-overlay"}
         id="body-overlay"
       ></div>
-
-      {/* navbar start custom navbar */}
-      <nav className={navbar ? "navbar navbar-area navbar-expand-lg" : "navbar navbar-area navbar-expand-lg"}>
-        <div className="container nav-container navbar-bg">
+      {/* ==================== Navbar Two Start ====================*/}
+      <nav
+        className={
+          navbar
+            ? "navbar navbar-area navbar-expand-lg bg-white li-color "
+            : "navbar navbar-area navbar-area-3 navbar-expand-lg li-color"
+        }
+      >
+        <div className=" container nav-container  bg-white ">
           <div className="responsive-mobile-menu">
             <button
               onClick={menuActive}
@@ -89,7 +92,7 @@ const NavBar = () => {
           </div>
           <div className="logo">
             <Link to="/">
-              <img src="assets/img/logo.png" alt="img" />
+              <img src="assets/img/logo3.png" alt="img" />
             </Link>
           </div>
           <div className="nav-right-part nav-right-part-mobile">
@@ -105,9 +108,7 @@ const NavBar = () => {
             }
             id="itech_main_menu"
           >
-
-           { /**ps-lg-5 navbarFive */}
-            <ul className="navbar-nav menu-open text-lg-center " >
+            <ul className="navbar-nav menu-open text-lg-center ps-lg-5 navbarFive ">
               <li className="">
                 <Link to="/">Home</Link>
               </li>
@@ -134,7 +135,7 @@ const NavBar = () => {
           </div>
           <div className="nav-right-part nav-right-part-desktop align-self-center">
             <Link
-              className="btn btn-base-color border-radius-5 d-flex align-items-center"
+              className=" btn btn-base-color border-radius-5 d-flex align-items-center"
               to="/about"
             >
               Get a quote <FaArrowRight className="mt-0" />
@@ -142,9 +143,11 @@ const NavBar = () => {
           </div>
         </div>
       </nav>
-      {/* navbar end */}
+      {/* ==================== Navbar Two end ====================
+  btn- #2f82a2db  icon-#2f82a2db
+      */}
     </>
   );
 };
 
-export default NavBar;
+export default Header;

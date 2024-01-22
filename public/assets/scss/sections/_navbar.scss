@@ -2,17 +2,15 @@
     # Nav bar
 ----------------------------------------------*/
 
-
 /******************/
-.nav-hover-green{
-  background: #fff;
-  li {
-    &:hover {
-      & > a {
-        color: #2f82a2db !important;
-      }
-    }
+.li-color{
+  color: var(--heading-color);
+    font-weight: 600;
+    font-size: 16px;
+    font-family: var(--heading-font);
 }
+.li-color-before{
+  color: #fff;
 }
 
 .navbar-top {
@@ -81,22 +79,24 @@
   .nav-container {
     //max-width: 1200px;
     transition: all 0.4s;
+    max-width: 1350px;
     //position: relative;
     ///////////////////////
     position: fixed;
     top: 0;
-    margin-left: 33px;
+    //margin-left: 33px;
 
     &.navbar-bg {
-      position: relative;
-      padding-left: 40px;
+      color: #000;
+      // position: relative;
+      // padding-left: 40px;
       &:after {
         content: "";
         position: absolute;
         left: 15px;
         top: 0;
         height: 100%;
-        width: 95%;
+        width: 100%;
         background: #fff;
         z-index: -1;
       }
@@ -123,12 +123,12 @@
         width: 100%;
         text-align: left;
         li {
-          a {
-            color: var(--heading-color);
-            font-weight: 600;
-            font-size: 16px;
-            font-family: var(--heading-font);
-          }
+          // a {
+          //   color: var(--heading-color);
+          //   font-weight: 600;
+          //   font-size: 16px;
+          //   font-family: var(--heading-font);
+          // }
           &:hover a {
             color: var(--main-color);
           }
@@ -522,9 +522,9 @@
 }
 
 .navbar-area-3 {
-  .nav-container .navbar-collapse .navbar-nav li a {
-    color: #fff;
-  }
+  // .nav-container .navbar-collapse .navbar-nav li a {
+  //   color: #fff;
+  // }
   .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children:before,
   .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children:after {
     background: #fff;
